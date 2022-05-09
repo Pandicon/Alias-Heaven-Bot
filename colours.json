@@ -1,0 +1,14 @@
+{
+	"missingPermsColorEmbed": "#ff4d00",
+	"cooldownColorEmbed": "#ffd561",
+	"successfullClaimEmbed": "#b5ff61",
+	"punishmentMade": "#f5341b",
+	"punishmentEnd": "#daf7a6",
+	"ruleBroken": "#f5341b",
+	"ruleBrokenSuspicion": "#ff6536",
+	"fail": "#f5341b",
+	"semifail": "#ff6536",
+	"success": "#b5ff61",
+	"defaultColor": "#2ACEf7",
+	"donators": ["#2ACEf7", "#3498DB", "#206694", "#9B59B6"]
+}
