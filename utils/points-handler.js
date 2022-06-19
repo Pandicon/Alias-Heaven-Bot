@@ -23,6 +23,10 @@ const add_points = async (userId, category, amount) => {
 		object = {
 			negacy: amount
 		};
+	} else if (category == 'enemy') {
+		object = {
+			enemy: amount
+		};
 	}
 	await pointsSchema.findByIdAndUpdate(
 		userId,

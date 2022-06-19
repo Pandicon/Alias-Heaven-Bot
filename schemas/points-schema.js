@@ -12,7 +12,8 @@ const num0 = {
 
 const schema = new mongoose.Schema({
 	_id: reqString,
-	negacy: num0
+	negacy: num0,
+	enemy: num0
 });
 
 module.exports = mongoose.model('points', schema, 'points');

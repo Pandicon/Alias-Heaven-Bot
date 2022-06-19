@@ -3,6 +3,7 @@ const { replyToMessage } = require('../utils/discord');
 const points_handler = require('../utils/points-handler.js');
 const {
 	points: categories,
+	exchangeable_points,
 	creator,
 	points_for_role,
 	roles: rs
@@ -39,6 +40,17 @@ module.exports = {
 				.setColor(fail)
 				.setDescription(
 					`\`${category}\` is not a valid category. Valid categories: \`${categories.join(
+						', '
+					)}\``
+				);
+			replyToMessage(message, true, '', [embed]);
+			return;
+		}
+		if (!exchangeable_points.includes(category)) {
+			embed
+				.setColor(fail)
+				.setDescription(
+					`You can not exchange points from the \`${category}\` category for any roles. Point categories which can be exchanged: \`${exchangeable_points.join(
 						', '
 					)}\``
 				);
