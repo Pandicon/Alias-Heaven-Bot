@@ -1,12 +1,25 @@
-# JavaScript Discord bot template
-This template contains some basic logic that basically any Discord bot will need - a command handler, events handler, and a connection to a MongoDB database.<br>
-This template uses Discord.js v13.3.1, which requires Node version 16.6 or higher to run.
+# Alias Heaven Bot
 
-### How to use
-Download the code and run `npm install`. That should install all the required dependencies automatically.<br>
-You will have to rename the `.env-template` file to `.env` and fill in the credentials. You can leave the MONGO_URI variable empty if you don't want to use MongoDB (make sure to remove all the other MongoDB things if you choose so). Don't leave in the <> that are in the template. If your bot's token was 123 and the Mongo URI was aBc, your .env file should look like this:<br>
+This is a Discord bot for the [Alias' Heaven Discord server](discord.gg/zqBVPyvXYe).
+
+## Running the bot
+
+To run the bot, you will have to add a `.env` file to the root of the project (next to the index.js file) with the following contents:
+
 ```
-BOT_TOKEN=123
-MONGO_URI=aBc
+BOT_TOKEN=<YOUR_BOT_TOKEN>
+MONGO_URI=<YOUR_MONGO_DB_URI>
 ```
-After you set this up, just run `node index.js` or `node .` to start the bot.
+
+Example file (hopefully invalid, don't use it as they shouldn't work):
+
+```
+BOT_TOKEN=LOmqOKAOIHDJOSYzNz49asmA4.YngMNw.67nFtEOE96_DpGUIYwsqmOaYE
+MONGO_URI=mongodb+srv://aliasheavenbot:strongpassword123@cluster0.s0qin.mongodb.net/PROJECT-0?retryWrites=true&w=majority
+```
+
+Once you do this, install all of the required npm packages with `npm i`. Then you will be able to run the bot with `node .`.
+
+## Contributing
+
+All contributions will be hand-checked before being merged. Make sure to write readable code.
