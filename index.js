@@ -10,6 +10,7 @@ const Discord = require('discord.js');
 const { Intents } = Discord;
 require('dotenv').config();
 const connectToMongo = require('./mongo');
+const raver_announcer = require('./runners/raver_announcer.js');
 
 const client = new Discord.Client({
 	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
@@ -20,14 +21,12 @@ client.on('ready', async () => {
 	console.log('Connecting to Mongo');
 	await connectToMongo();
 	let commandsInitialiser = require('./initialise-commands.js');
-	if (commandsInitialiser.default)
-		commandsInitialiser = commandsInitialiser.default;
+	if (commandsInitialiser.default) commandsInitialiser = commandsInitialiser.default;
 
 	const commands = commandsInitialiser();
 
 	let eventsInitialiser = require('./initialise-events.js');
-	if (eventsInitialiser.default)
-		eventsInitialiser = eventsInitialiser.default;
+	if (eventsInitialiser.default) eventsInitialiser = eventsInitialiser.default;
 
 	const events = eventsInitialiser();
 
@@ -38,6 +37,8 @@ client.on('ready', async () => {
 	for (const event of events) {
 		event.callback(client, eventArgs[event.name]);
 	}
+
+	raver_announcer(client);
 });
 
 client.login(process.env.BOT_TOKEN);

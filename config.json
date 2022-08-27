@@ -1,5 +1,6 @@
 {
-	"prefix": "p!",
+	"server_id": "541003397462097921",
+	"prefix": "h!",
 	"validPermissions": [
 		"CREATE_INSTANT_INVITE",
 		"KICK_MEMBERS",
@@ -46,6 +47,7 @@
 	"exchangeable_points": ["negacy"],
 	"creator": "mkpanda#4841",
 	"roles": {
+		"event_ping": "548239697306976289",
 		"negacy": [
 			"698659900867477604",
 			"698659986393268284",
@@ -64,5 +66,26 @@
 			"702233679975415829"
 		]
 	},
-	"points_for_role": 4
+	"points_for_role": 4,
+	"raver": {
+		"channel_id": "541718810722435112",
+		"chance": 20,
+		"min_days": 5,
+		"max_days": 30,
+		"tasks_limits": {
+			"quacks": [1000, 3000],
+			"antagonist_pings": [1000, 3000],
+			"general_messages": [500, 1000],
+			"counting": [500, 1000],
+			"memes": [5, 5]
+		},
+		"tasks": ["quacks", "antagonist_pings", "general_messages", "counting", "memes"],
+		"tasks_descriptions": {
+			"quacks": "Quack * times in <#596644573485465620>",
+			"antagonist_pings": "Ping <@&542362647048224771> * times in <#542424601188368411> (only one ping per message counts)",
+			"general_messages": "Send * messages in <#541003397462097925> (spamming will get you punished)",
+			"counting": "Send * valid counts in <#694979274704289802>",
+			"memes": "Send * decent memes to <#542353168298672135>"
+		}
+	}
 }
