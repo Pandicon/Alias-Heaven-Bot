@@ -70,7 +70,7 @@
 	"raver": {
 		"channel_id": "541718810722435112",
 		"chance": 20,
-		"min_days": 5,
+		"min_days": 0,
 		"max_days": 30,
 		"tasks_limits": {
 			"quacks": [1000, 3000],
