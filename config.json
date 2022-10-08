@@ -76,7 +76,7 @@
 			"quacks": [1000, 3000],
 			"antagonist_pings": [1000, 3000],
 			"general_messages": [500, 1000],
-			"counting": [500, 1000],
+			"counting": [250, 500],
 			"memes": [5, 5]
 		},
 		"tasks": ["quacks", "antagonist_pings", "general_messages", "counting", "memes"],
