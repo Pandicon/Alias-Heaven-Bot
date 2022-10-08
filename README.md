@@ -22,4 +22,4 @@ Once you do this, install all of the required npm packages with `npm i`. Then yo
 
 ## Contributing
 
-All contributions will be hand-checked before being merged. Make sure to write readable code.
+All contributions will be hand-checked before being merged. Make sure to write readable code. Make sure to create pull requests into the dev branch.
