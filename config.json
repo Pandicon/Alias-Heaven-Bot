@@ -87,5 +87,11 @@
 			"counting": "Send * valid counts in <#694979274704289802>",
 			"memes": "Send * decent memes to <#542353168298672135>"
 		}
+	},
+	"channel_ids": {
+		"quackspam": "596644573485465620"
+	},
+	"messages_patters": {
+		"level_up": "advanced to level"
 	}
 }
