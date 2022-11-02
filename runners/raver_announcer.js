@@ -16,7 +16,7 @@ module.exports = async (client) => {
 	while (true) {
 		const time_now = Date.now();
 		last_random_run = time_now;
-		const time_since_event = time_now - last_event;
+		const time_since_event = time_now - last_event + 60*1000; // Add 60 seconds to the time to avoid any issues with lag
 		if (time_since_event > raver_config.max_days * ms_in_day) {
 			last_event = time_now;
 			host(client, time_now);
