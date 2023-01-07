@@ -14,20 +14,15 @@ module.exports = {
 	permissions: [],
 	expectedArgs: ['<alias> [mention]'],
 	minArgs: 0,
-	callback: async (message, ...args) => {
+	callback: async (client, message, ...args) => {
 		const member = message.mentions.members.first() || message.member;
 		const points = await points_handler.get_points(member.id);
 		let string = '';
 		for (const category of categories) {
-			string += `\n${capitaliseFirstLetter(category)}: ${
-				points[category] || 0
-			}`;
+			string += `\n${capitaliseFirstLetter(category)}: ${points[category] || 0}`;
 		}
 		const embed = new DJS.MessageEmbed()
-			.setAuthor(
-				message.member.user.tag,
-				message.member.user.displayAvatarURL({ dynamic: true })
-			)
+			.setAuthor(message.member.user.tag, message.member.user.displayAvatarURL({ dynamic: true }))
 			.setColor(success)
 			.setDescription(`**Points of ${member.user.tag}**${string}`)
 			.setFooter(`Bot made by ${creator}`)

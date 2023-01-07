@@ -11,12 +11,9 @@ module.exports = {
 	permissions: ['MANAGE_ROLES'],
 	expectedArgs: ['<alias> <mention> <category> <action> <amount>'],
 	minArgs: 3,
-	callback: async (message, ...args) => {
+	callback: async (client, message, ...args) => {
 		const embed = new DJS.MessageEmbed()
-			.setAuthor(
-				message.member.user.tag,
-				message.member.user.displayAvatarURL({ dynamic: true })
-			)
+			.setAuthor(message.member.user.tag, message.member.user.displayAvatarURL({ dynamic: true }))
 			.setFooter(`Bot made by ${creator}`)
 			.setTimestamp();
 		const member = message.mentions.members.first();
@@ -28,22 +25,14 @@ module.exports = {
 		if (!actions.includes(action)) {
 			embed
 				.setColor(fail)
-				.setDescription(
-					`\`${action}\` is not a valid action. Valid actions: \`${actions.join(
-						', '
-					)}\``
-				);
+				.setDescription(`\`${action}\` is not a valid action. Valid actions: \`${actions.join(', ')}\``);
 			replyToMessage(message, true, '', [embed]);
 			return;
 		}
 		if (!member) {
 			embed
 				.setColor(fail)
-				.setDescription(
-					`Please mention someone to ${action} the points ${
-						action == 'add' ? 'to' : 'from'
-					}.`
-				);
+				.setDescription(`Please mention someone to ${action} the points ${action == 'add' ? 'to' : 'from'}.`);
 			replyToMessage(message, true, '', [embed]);
 			return;
 		}
@@ -51,40 +40,26 @@ module.exports = {
 			embed
 				.setColor(fail)
 				.setDescription(
-					`\`${category}\` is not a valid category. Valid categories: \`${categories.join(
-						', '
-					)}\`.`
+					`\`${category}\` is not a valid category. Valid categories: \`${categories.join(', ')}\`.`
 				);
 			replyToMessage(message, true, '', [embed]);
 			return;
 		}
 		if (isNaN(amount) || amount != Math.floor(amount)) {
-			embed
-				.setColor(fail)
-				.setDescription(
-					`Please enter a valid amount (needs to be a whole number).`
-				);
+			embed.setColor(fail).setDescription(`Please enter a valid amount (needs to be a whole number).`);
 			replyToMessage(message, true, '', [embed]);
 			return;
 		}
 		let amount_to_add = amount;
 		if (action == 'remove') amount_to_add = -amount;
-		let total = await points_handler.add_points(
-			member.id,
-			category,
-			amount_to_add
-		);
+		let total = await points_handler.add_points(member.id, category, amount_to_add);
 		let action_string = action == 'add' ? 'Added' : 'Removed';
 		embed
 			.setColor(success)
 			.setDescription(
-				`${action_string} ${amount} ${category} point${
-					amount == 1 ? '' : 's'
-				} ${
+				`${action_string} ${amount} ${category} point${amount == 1 ? '' : 's'} ${
 					action == 'add' ? 'to' : 'from'
-				} ${member}. They now have ${total} ${category} point${
-					total == 1 ? '' : 's'
-				}.`
+				} ${member}. They now have ${total} ${category} point${total == 1 ? '' : 's'}.`
 			);
 		replyToMessage(message, true, '', [embed]);
 	}
