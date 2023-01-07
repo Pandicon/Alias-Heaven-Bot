@@ -91,7 +91,7 @@ module.exports = {
 
 		const success_embed = new DJS.MessageEmbed()
 			.setColor(success)
-			.setDescription(`Ticket sent successfully`)
+			.setDescription(`Ticket sent successfully, go to ${ticket_channel} to chat with staff`)
 			.setFooter(`Bot made by ${creator}`)
 			.setTimestamp();
 		replyToMessage(message, true, '', [success_embed]);
