@@ -91,7 +91,7 @@
 	"channel_ids": {
 		"quackspam": "596644573485465620"
 	},
-	"messages_patters": {
+	"messages_patterns": {
 		"level_up": "advanced to level"
 	}
 }
