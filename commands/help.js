@@ -42,8 +42,8 @@ module.exports = {
 					value: `Alias: p\nLets you view points you or the mentioned member has\nSyntax: <alias> [mention]\nExample use: ${prefix}points <@576163015120912386> (Will show how many points <@576163015120912386> has), ${prefix}points (Will show how many points you have)\nRequired permissions: None`
 				},
 				{
-					name: 'report',
-					value: `Aliases: None\nLets you report a user to the staff members\nSyntax: <alias> [mention/user tag/user id]\nExample use: ${prefix}report user#1234 Spamming in general chat, ${prefix}report @user#1234 Swearing, ${prefix}report <@123456789132456789> Memes in general chat\nRequired permissions: None`
+					name: 'ticket',
+					value: `Aliases: None\nLets you create a ticket for communicating with the staff members\nSyntax: <alias> <your message>\nExample use: ${prefix}ticket I did not get access to the secret area even though I have the access role\nRequired permissions: None`
 				}
 			)
 			.setDescription('Note: Arguments marked with <> are required, while those marked with [] are optional.')
