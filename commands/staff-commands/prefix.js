@@ -7,27 +7,14 @@ module.exports = {
 	minArgs: 1,
 	permissionError: 'You need manage server permissions to run this command',
 	permissions: ['MANAGE_GUILD'],
-	callback: async (message, ...args) => {
+	callback: async (client, message, ...args) => {
 		const newPrefix = args[0];
-		if (!message?.guild?.id)
-			return replyToMessage(
-				message,
-				false,
-				'Something went wrong, please try again later.'
-			);
+		if (!message?.guild?.id) return replyToMessage(message, false, 'Something went wrong, please try again later.');
 		let state = await setPrefix(message.guild?.id, newPrefix);
 		if (state == 'same') {
-			replyToMessage(
-				message,
-				false,
-				`The prefix is already set to \`${newPrefix}\`!`
-			);
+			replyToMessage(message, false, `The prefix is already set to \`${newPrefix}\`!`);
 			return;
 		}
-		replyToMessage(
-			message,
-			false,
-			`The prefix was successfully set to \`${newPrefix}\`!`
-		);
+		replyToMessage(message, false, `The prefix was successfully set to \`${newPrefix}\`!`);
 	}
 };

@@ -6,7 +6,7 @@ const client = require('../index');
 
 const message_checker = require('../checkers/main');
 
-const runCommand = async (message, commands) => {
+const runCommand = async (client, message, commands) => {
 	if (message.channel.type == 'DM') return;
 	if (!message?.channel || !message?.guild || !client?.user || message.author.bot) return;
 	const prefix = (await getPrefix(message.guild.id)) || defaultPrefix;
@@ -40,7 +40,7 @@ const runCommand = async (message, commands) => {
 		return;
 	}
 	try {
-		command.callback(message, ...args);
+		command.callback(client, message, ...args);
 	} catch (error) {
 		console.log(error);
 	}
@@ -53,7 +53,7 @@ module.exports = {
 			// Running commands
 			try {
 				if (message_checker.check(message)) return;
-				await runCommand(message, commands);
+				await runCommand(client, message, commands);
 			} catch (error) {
 				console.log(error);
 			}

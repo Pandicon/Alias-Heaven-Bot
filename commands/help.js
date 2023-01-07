@@ -14,13 +14,10 @@ module.exports = {
 	permissions: [],
 	expectedArgs: ['<alias>'],
 	minArgs: 0,
-	callback: async (message, ...args) => {
+	callback: async (client, message, ...args) => {
 		const prefix = await prefix_handler.getPrefix(message.guild.id);
 		const embed = new DJS.MessageEmbed()
-			.setAuthor(
-				message.member.user.tag,
-				message.member.user.displayAvatarURL({ dynamic: true })
-			)
+			.setAuthor(message.member.user.tag, message.member.user.displayAvatarURL({ dynamic: true }))
 			.setColor(success)
 			.setTitle('Commands list')
 			.addFields(
@@ -43,11 +40,13 @@ module.exports = {
 				{
 					name: 'points',
 					value: `Alias: p\nLets you view points you or the mentioned member has\nSyntax: <alias> [mention]\nExample use: ${prefix}points <@576163015120912386> (Will show how many points <@576163015120912386> has), ${prefix}points (Will show how many points you have)\nRequired permissions: None`
+				},
+				{
+					name: 'ticket',
+					value: `Aliases: None\nLets you create a ticket for communicating with the staff members\nSyntax: <alias> <your message>\nExample use: ${prefix}ticket I did not get access to the secret area even though I have the access role\nRequired permissions: None`
 				}
 			)
-			.setDescription(
-				'Note: Arguments marked with <> are required, while those marked with [] are optional.'
-			)
+			.setDescription('Note: Arguments marked with <> are required, while those marked with [] are optional.')
 			.setFooter(`Bot made by ${creator}`)
 			.setTimestamp();
 		replyToMessage(message, true, '', [embed]);

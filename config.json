@@ -67,6 +67,9 @@
 		]
 	},
 	"points_for_role": 4,
+	"member_report_command": {
+		"channel_id": "1061253314165080105"
+	},
 	"raver": {
 		"channel_id": "541718810722435112",
 		"chance": 20,
@@ -91,7 +94,7 @@
 	"channel_ids": {
 		"quackspam": "596644573485465620"
 	},
-	"messages_patters": {
+	"messages_patterns": {
 		"level_up": "advanced to level"
 	}
 }
