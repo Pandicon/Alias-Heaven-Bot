@@ -1,6 +1,7 @@
 const DJS = require('discord.js');
 const { replyToMessage } = require('../utils/discord');
-const { creator } = require('../config.json');
+const config = require('../config.json');
+const { creator } = config;
 const { success } = require('../colours.json');
 const prefix_handler = require('../utils/prefix-handler.js');
 
@@ -28,6 +29,10 @@ module.exports = {
 				{
 					name: 'prefix',
 					value: `Alias: change-prefix\nLets you change the server prefix\nSyntax: <alias> <new prefix>\nExample use: ${prefix}prefix pt! (Will change the server prefix to pt!)\nRequired permissions: Manage server`
+				},
+				{
+					name: 'ticket-close',
+					value: `Aliases: tclose, ticketclose\nLets you close a ticket by deleting its channel\nSyntax: <alias> <mention>\nExample use: ${prefix}tclose\nRequired permissions: Manage roles\nNote: The channel this command is ran in has to be in the <#${config.ticket_command.category_id}> category.`
 				},
 				{
 					name: 'exchange-points',
