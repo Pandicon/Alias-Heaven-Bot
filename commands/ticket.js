@@ -1,7 +1,7 @@
 const config = require('../config.json');
 const { ticket_command: tickets_config } = config;
 const DJS = require('discord.js');
-const { replyToMessage, sendMessage } = require('../utils/discord');
+const { sendMessage } = require('../utils/discord');
 const { creator } = require('../config.json');
 const { success, fail } = require('../colours.json');
 
@@ -12,6 +12,7 @@ module.exports = {
 	expectedArgs: ['<alias> <Your message>'],
 	minArgs: 1,
 	callback: async (client, message, ...args) => {
+		message.delete();
 		let ticket = args.join(' ');
 		const server = client.guilds?.cache.get(config.server_id) ?? null;
 		if (server === null) {
@@ -20,7 +21,7 @@ module.exports = {
 				.setDescription(`Failed to fetch this server for the ticket...`)
 				.setFooter(`Bot made by ${creator}`)
 				.setTimestamp();
-			replyToMessage(message, true, '', [embed]);
+			sendMessage(message.channel, '', [embed]);
 			return;
 		}
 		const tickets_category = server.channels?.cache.get(tickets_config.category_id) ?? null;
@@ -30,7 +31,7 @@ module.exports = {
 				.setDescription(`Failed to fetch the tickets category...`)
 				.setFooter(`Bot made by ${creator}`)
 				.setTimestamp();
-			replyToMessage(message, true, '', [embed]);
+			sendMessage(message.channel, '', [embed]);
 			return;
 		}
 		const ticket_embed = new DJS.MessageEmbed()
@@ -84,7 +85,7 @@ module.exports = {
 				.setDescription(`Failed to create the tickets channel...`)
 				.setFooter(`Bot made by ${creator}`)
 				.setTimestamp();
-			replyToMessage(message, true, '', [embed]);
+			sendMessage(message.channel, '', [embed]);
 			return;
 		}
 		sendMessage(ticket_channel, '', [ticket_embed]);
@@ -96,6 +97,6 @@ module.exports = {
 			)
 			.setFooter(`Bot made by ${creator}`)
 			.setTimestamp();
-		replyToMessage(message, true, '', [success_embed]);
+		sendMessage(message.channel, '', [success_embed]);
 	}
 };
