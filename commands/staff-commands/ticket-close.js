@@ -23,6 +23,16 @@ module.exports = {
 			replyToMessage(message, true, '', [embed]);
 			return;
 		}
+		if (config.ticket_command.non_ticket_channels.includes(message.channel.id)) {
+			const embed = new DJS.MessageEmbed()
+				.setAuthor(message.member.user.tag, message.member.user.displayAvatarURL({ dynamic: true }))
+				.setColor(fail)
+				.setDescription(`This channel is set to not be considered a ticket channel, so it can not be closed.`)
+				.setFooter(`Bot made by ${creator}`)
+				.setTimestamp();
+			replyToMessage(message, true, '', [embed]);
+			return;
+		}
 		message.channel.delete('Closing the ticket');
 	}
 };

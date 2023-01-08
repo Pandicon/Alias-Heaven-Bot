@@ -70,7 +70,8 @@
 	},
 	"points_for_role": 4,
 	"ticket_command": {
-		"category_id": "1061402693052153866"
+		"category_id": "1061402693052153866",
+		"non_ticket_channels": ["1061648936709918843"]
 	},
 	"raver": {
 		"channel_id": "541718810722435112",
