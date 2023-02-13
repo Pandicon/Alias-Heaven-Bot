@@ -43,7 +43,7 @@
 		"SEND_MESSAGES_IN_THREADS",
 		"START_EMBEDDED_ACTIVITIES"
 	],
-	"points": ["negacy", "enemy"],
+	"points": ["negacy"],
 	"exchangeable_points": ["negacy"],
 	"creator": "mkpanda#4841",
 	"roles": {
