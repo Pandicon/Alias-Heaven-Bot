@@ -71,10 +71,10 @@
 	"points_for_role": 4,
 	"ticket_command": {
 		"category_id": "1061402693052153866",
-		"non_ticket_channels": ["1061648936709918843"]
+		"non_ticket_channels": ["1072404825364504656"]
 	},
 	"raver": {
-		"channel_id": "541718810722435112",
+		"channel_id": "1072401335569371167",
 		"chance": 20,
 		"min_days": 0,
 		"max_days": 30,
@@ -95,7 +95,7 @@
 		}
 	},
 	"channel_ids": {
-		"quackspam": "596644573485465620"
+		"quackspam": "1072399610594742342"
 	},
 	"messages_patterns": {
 		"level_up": "advanced to level"
