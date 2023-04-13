@@ -87,11 +87,11 @@
 		},
 		"tasks": ["quacks", "antagonist_pings", "general_messages", "counting", "memes"],
 		"tasks_descriptions": {
-			"quacks": "Quack * times in <#596644573485465620>",
-			"antagonist_pings": "Ping <@&542362647048224771> * times in <#542424601188368411> (only one ping per message counts)",
-			"general_messages": "Send * messages in <#541003397462097925> (spamming will get you punished)",
-			"counting": "Send * valid counts in <#694979274704289802>",
-			"memes": "Send * decent memes to <#542353168298672135>"
+			"quacks": "Quack * times in <#1072399610594742342>",
+			"antagonist_pings": "Ping <@&542362647048224771> * times in <#1072399686457118760> (only one ping per message counts)",
+			"general_messages": "Send * messages in <#1072278952070103161> (spamming will get you punished)",
+			"counting": "Send * valid counts in <#1072408208905351219>",
+			"memes": "Send * decent memes to <#1072399528289902662>"
 		}
 	},
 	"channel_ids": {
