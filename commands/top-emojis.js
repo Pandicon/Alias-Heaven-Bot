@@ -58,7 +58,7 @@ module.exports = {
 			const split_emoji = emoji.split(':');
 			if (split_emoji.length > 2) {
 				split_emoji[2] = split_emoji[2].slice(0, -1);
-				split_emoji[0] = '';
+				split_emoji[0] = split_emoji[0].slice(1);
 			}
 			const emoji_id = split_emoji.length > 2 ? split_emoji[2] : null;
 			const can_show_emoji = !emoji_id || client.emojis.cache.get(emoji_id) != undefined;
@@ -75,7 +75,7 @@ module.exports = {
 			.setAuthor(message.member.user.tag, message.member.user.displayAvatarURL({ dynamic: true }))
 			.setColor(colour)
 			.setDescription(text)
-			.setFooter(`Bot made by ${creator}`)
+			.setFooter(`Page ${page} out of ${Math.ceil(resultsAll.length / 25)} • Bot made by ${creator}`)
 			.setTimestamp();
 		replyToMessage(message, false, '', [embed]);
 	}
