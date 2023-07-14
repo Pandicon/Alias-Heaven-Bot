@@ -130,7 +130,13 @@
 		}
 	},
 	"channel_ids": {
-		"quackspam": "1072399610594742342"
+		"quackspam": "1072399610594742342",
+		"channels_ignore_emoji_counting": [
+			"1072400323823538207",
+			"1072392435268857967",
+			"1072403430854889472",
+			"1072403942744539166"
+		]
 	},
 	"messages_patterns": {
 		"level_up": "advanced to level"

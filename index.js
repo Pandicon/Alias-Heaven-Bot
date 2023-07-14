@@ -32,7 +32,8 @@ client.on('ready', async () => {
 	const events = eventsInitialiser();
 
 	const eventArgs = {
-		messageCreate: commands
+		messageCreate: commands,
+		messageDelete: null
 	};
 
 	for (const event of events) {

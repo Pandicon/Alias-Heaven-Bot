@@ -4,6 +4,7 @@ const { replyToMessage, memberHasPermissions } = require('../utils/discord');
 const { getPrefix } = require('../utils/prefix-handler');
 const client = require('../index');
 
+const emoji_usage_tracker = require('../counters/emoji_usage');
 const message_checker = require('../checkers/main');
 
 const runCommand = async (client, message, commands) => {
@@ -53,6 +54,7 @@ module.exports = {
 			// Running commands
 			try {
 				if (message_checker.check(message)) return;
+				emoji_usage_tracker.handle_message_emoji_usage(message, 1);
 				await runCommand(client, message, commands);
 			} catch (error) {
 				console.log(error);

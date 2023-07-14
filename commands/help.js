@@ -49,6 +49,10 @@ module.exports = {
 				{
 					name: 'ticket',
 					value: `Aliases: None\nLets you create a ticket for communicating with the staff members\nSyntax: <alias> <your message>\nExample use: ${prefix}ticket I did not get access to the secret area even though I have the access role\nRequired permissions: None`
+				},
+				{
+					name: 'top-emojis',
+					value: `Aliases: te\nLets you see the most used emojis\nSyntax: <alias> [page]\nExample use: ${prefix}topemojis 3\nRequired permissions: None`
 				}
 			)
 			.setDescription('Note: Arguments marked with <> are required, while those marked with [] are optional.')
