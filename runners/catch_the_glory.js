@@ -11,10 +11,10 @@ module.exports = async (client) => {
 	};
 	let last_glory_post = parseInt(res.last_glory_post);
 	let time_to_wait = 0;
-	if (last_glory_post + ms_in_day < Date.now()) {
+	if (last_glory_post + glory_config.period < Date.now()) {
 		time_to_wait = Math.floor(Math.random() * 60 * 60 * 1000); // Wait up to an hour after startup if a glory message wasn't posted in the last 24 hours
 	} else {
-		time_to_wait = ms_in_day - (Date.now() % ms_in_day) + Math.floor(Math.random() * ms_in_day); // Wait till the end of the UTC day + a random part of the next day -> should post once every UTC day
+		time_to_wait = ms_in_day - (Date.now() % ms_in_day) + Math.floor(Math.random() * glory_config.period); // Wait till the end of the UTC day + a random time between 0 and the period -> should post once every <period> UTC days
 	}
 	await timer(time_to_wait);
 	while (true) {
@@ -25,7 +25,7 @@ module.exports = async (client) => {
 			{ _id: '0', last_glory_post: time_now.toString() },
 			{ upsert: true }
 		);
-		time_to_wait = ms_in_day - (Date.now() % ms_in_day) + Math.floor(Math.random() * ms_in_day);
+		time_to_wait = ms_in_day - (Date.now() % ms_in_day) + Math.floor(Math.random() * glory_config.period);
 		await timer(time_to_wait);
 	}
 };
