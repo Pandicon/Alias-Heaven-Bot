@@ -43,12 +43,20 @@ module.exports = {
 					value: `Aliases: h, commands, c\nLets you view this menu\nSyntax: <alias>\nExample use: ${prefix}help (Will display this message)\nRequired permissions: None`
 				},
 				{
+					name: 'ping',
+					value: `Alias: ping\nCalculates the bot ping and API latency\nSyntax: <alias>\nExample use: ${prefix}ping\nRequired permissions: None`
+				},
+				{
 					name: 'points',
 					value: `Alias: p\nLets you view points you or the mentioned member has\nSyntax: <alias> [mention]\nExample use: ${prefix}points <@576163015120912386> (Will show how many points <@576163015120912386> has), ${prefix}points (Will show how many points you have)\nRequired permissions: None`
 				},
 				{
 					name: 'ticket',
 					value: `Aliases: None\nLets you create a ticket for communicating with the staff members\nSyntax: <alias> <your message>\nExample use: ${prefix}ticket I did not get access to the secret area even though I have the access role\nRequired permissions: None`
+				},
+				{
+					name: 'top-emojis',
+					value: `Aliases: te\nLets you see the most used emojis\nSyntax: <alias> [page]\nExample use: ${prefix}topemojis 3\nRequired permissions: None`
 				}
 			)
 			.setDescription('Note: Arguments marked with <> are required, while those marked with [] are optional.')

@@ -10,6 +10,7 @@ const Discord = require('discord.js');
 const { Intents } = Discord;
 require('dotenv').config();
 const connectToMongo = require('./mongo');
+const glory_sender = require('./runners/catch_the_glory.js');
 const raver_announcer = require('./runners/raver_announcer.js');
 
 const client = new Discord.Client({
@@ -31,7 +32,8 @@ client.on('ready', async () => {
 	const events = eventsInitialiser();
 
 	const eventArgs = {
-		messageCreate: commands
+		messageCreate: commands,
+		messageDelete: null
 	};
 
 	for (const event of events) {
@@ -39,6 +41,7 @@ client.on('ready', async () => {
 	}
 
 	raver_announcer(client);
+	glory_sender(client);
 });
 
 client.login(process.env.BOT_TOKEN);
