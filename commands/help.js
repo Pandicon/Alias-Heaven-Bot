@@ -43,6 +43,10 @@ module.exports = {
 					value: `Aliases: h, commands, c\nLets you view this menu\nSyntax: <alias>\nExample use: ${prefix}help (Will display this message)\nRequired permissions: None`
 				},
 				{
+					name: 'ping',
+					value: `Alias: ping\nCalculates the bot ping and API latency\nSyntax: <alias>\nExample use: ${prefix}ping\nRequired permissions: None`
+				},
+				{
 					name: 'points',
 					value: `Alias: p\nLets you view points you or the mentioned member has\nSyntax: <alias> [mention]\nExample use: ${prefix}points <@576163015120912386> (Will show how many points <@576163015120912386> has), ${prefix}points (Will show how many points you have)\nRequired permissions: None`
 				},
